@@ -4,10 +4,9 @@ import {
   Layers,
   Server,
   Database,
-  Cloud,
+  Smartphone,
   Terminal,
-  ShieldCheck,
-  Cpu,
+  GitBranch,
   Globe2,
   CheckCircle,
   Sparkles,
@@ -16,13 +15,13 @@ import { skillsData } from "../data/portfolioData";
 
 const categoryList = [
   { id: "all", label: "All Skills", icon: Sparkles },
-  { id: "languages", label: "Programming Languages", icon: Code },
-  { id: "backend", label: "Backend & APIs", icon: Server },
+  { id: "languages", label: "Languages", icon: Code },
   { id: "frontend", label: "Frontend", icon: Layers },
-  { id: "databases", label: "Databases", icon: Database },
-  { id: "devops", label: "DevOps & Cloud", icon: Cloud },
-  { id: "architecture", label: "Architecture", icon: Cpu },
-  { id: "tools", label: "Tools & IDEs", icon: Terminal },
+  { id: "backend", label: "Backend", icon: Server },
+  { id: "database", label: "Database", icon: Database },
+  { id: "mobileApp", label: "Mobile App", icon: Smartphone },
+  { id: "tools", label: "Tools", icon: Terminal },
+  { id: "versionControl", label: "Version Control", icon: GitBranch },
 ];
 
 const SkillsSection = () => {
@@ -31,52 +30,52 @@ const SkillsSection = () => {
   const categories = [
     {
       id: "languages",
-      title: "Programming Languages",
+      title: "Languages",
       icon: Code,
       color: "from-blue-500 to-indigo-500",
-      skills: skillsData.programmingLanguages,
-    },
-    {
-      id: "backend",
-      title: "Backend & Systems",
-      icon: Server,
-      color: "from-emerald-500 to-teal-500",
-      skills: skillsData.backend,
+      skills: skillsData.languages,
     },
     {
       id: "frontend",
-      title: "Frontend Development",
+      title: "Frontend",
       icon: Layers,
       color: "from-purple-500 to-pink-500",
       skills: skillsData.frontend,
     },
     {
-      id: "databases",
-      title: "Databases & Data Modeling",
+      id: "backend",
+      title: "Backend",
+      icon: Server,
+      color: "from-emerald-500 to-teal-500",
+      skills: skillsData.backend,
+    },
+    {
+      id: "database",
+      title: "Database",
       icon: Database,
       color: "from-cyan-500 to-blue-500",
-      skills: skillsData.databases,
+      skills: skillsData.database,
     },
     {
-      id: "devops",
-      title: "DevOps & Cloud",
-      icon: Cloud,
+      id: "mobileApp",
+      title: "Mobile App",
+      icon: Smartphone,
       color: "from-amber-500 to-orange-500",
-      skills: skillsData.devopsCloud,
-    },
-    {
-      id: "architecture",
-      title: "Architecture & Principles",
-      icon: Cpu,
-      color: "from-indigo-500 to-purple-500",
-      skills: skillsData.architecture,
+      skills: skillsData.mobileApp,
     },
     {
       id: "tools",
-      title: "Development Tools & Workflow",
+      title: "Tools",
       icon: Terminal,
       color: "from-fuchsia-500 to-rose-500",
       skills: skillsData.tools,
+    },
+    {
+      id: "versionControl",
+      title: "Version Control",
+      icon: GitBranch,
+      color: "from-indigo-500 to-purple-500",
+      skills: skillsData.versionControl,
     },
   ];
 
@@ -97,12 +96,12 @@ const SkillsSection = () => {
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Technical{" "}
             <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
-              Proficiency
+              Skills
             </span>
           </h2>
           <p className="mt-4 text-slate-400 text-sm sm:text-base">
-            Verified technologies and engineering principles supported by academic curriculum
-            and direct production projects. No arbitrary percentages — only real skills.
+            Verified technologies, frameworks, and developer workflows organized exactly by my
+            latest curriculum and hands-on projects.
           </p>
         </div>
 
@@ -143,8 +142,8 @@ const SkillsSection = () => {
                 data-aos-delay={idx * 80}
                 className="group relative rounded-2xl bg-slate-900/40 border border-white/[0.08] p-6 hover:border-indigo-500/40 hover:bg-slate-900/70 transition-all duration-300 backdrop-blur-xl flex flex-col justify-between"
               >
-                {/* Category Header */}
                 <div>
+                  {/* Category Header */}
                   <div className="flex items-center gap-3 pb-4 mb-4 border-b border-white/[0.08]">
                     <div
                       className={`p-2.5 rounded-xl bg-gradient-to-br ${category.color} bg-opacity-20 text-white shadow-md`}
@@ -175,7 +174,7 @@ const SkillsSection = () => {
                           </span>
                         </div>
                         <span className="text-[11px] font-mono text-slate-400">
-                          {skill.level || skill.detail}
+                          {skill.detail}
                         </span>
                       </div>
                     ))}
@@ -198,10 +197,10 @@ const SkillsSection = () => {
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white">
-                  Spoken Languages
+                  Languages
                 </h4>
                 <p className="text-xs text-slate-400">
-                  Multilingual communication proficiency for international and regional engineering teams
+                  Multilingual communication proficiency: English, Tamil, Sinhala
                 </p>
               </div>
             </div>

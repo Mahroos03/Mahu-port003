@@ -11,9 +11,14 @@ import {
   Users,
   Mail,
   Phone,
-  ShieldCheck,
+  Trophy,
+  Medal,
 } from "lucide-react";
-import { certificationsData, referencesData } from "../data/portfolioData";
+import {
+  certificationsData,
+  achievementsData,
+  referencesData,
+} from "../data/portfolioData";
 
 const CertificationsSection = () => {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -32,7 +37,7 @@ const CertificationsSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono font-medium text-indigo-300 mb-4">
             <Award className="w-3.5 h-3.5 text-indigo-400" />
-            <span>CREDENTIALS &amp; VALIDATION</span>
+            <span>CREDENTIALS &amp; HONORS</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Certifications &amp;{" "}
@@ -41,117 +46,149 @@ const CertificationsSection = () => {
             </span>
           </h2>
           <p className="mt-4 text-slate-400 text-sm sm:text-base leading-relaxed">
-            Verified technical certifications from Cisco Networking Academy, University of Moratuwa CODL,
-            SoloLearn, Marstech, and SimpliLearn validating programming, security, and cloud skills.
+            Verified professional certifications, competitive sports honours, and official
+            academic references from the University of Moratuwa.
           </p>
         </div>
 
-        {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certificationsData.map((cert, idx) => (
-            <div
-              key={cert.id}
-              data-aos="fade-up"
-              data-aos-delay={idx * 80}
-              className="group relative rounded-2xl bg-[#090d1f]/80 border border-white/[0.08] hover:border-indigo-500/40 p-5 backdrop-blur-xl transition-all duration-300 shadow-xl flex flex-col justify-between"
-            >
-              <div>
-                {/* Certificate Thumbnail Preview */}
-                <div className="relative h-44 rounded-xl overflow-hidden bg-slate-950 border border-white/5 mb-4 group-hover:border-indigo-500/30 transition-colors">
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-
-                  {/* Hover Quick Action Buttons */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 backdrop-blur-xs">
-                    <button
-                      onClick={() => setSelectedCert(cert)}
-                      className="px-3.5 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-semibold flex items-center gap-1.5 shadow-md hover:bg-indigo-500 transition-colors"
-                    >
-                      <Eye className="w-3.5 h-3.5" />
-                      <span>View</span>
-                    </button>
-                    <button
-                      onClick={() => handleDownload(cert)}
-                      className="px-3.5 py-1.5 rounded-lg bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 backdrop-blur-md hover:bg-white/30 transition-colors"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      <span>Download</span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Meta details */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs font-mono text-indigo-400">
-                    <span className="truncate">{cert.issuer}</span>
-                    <span className="flex items-center gap-1 text-slate-500">
-                      <Calendar className="w-3 h-3" />
-                      {cert.date}
-                    </span>
-                  </div>
-
-                  <h3 className="text-base font-bold text-white group-hover:text-indigo-300 transition-colors line-clamp-1">
-                    {cert.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
-                    {cert.description}
-                  </p>
-
-                  {cert.code && (
-                    <div className="pt-1">
-                      <span className="text-[11px] font-mono text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">
-                        Code: {cert.code}
-                      </span>
-                    </div>
-                  )}
-                  {cert.certificateNumber && (
-                    <div className="pt-1">
-                      <span className="text-[11px] font-mono text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">
-                        No: {cert.certificateNumber}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Bottom Card View Link */}
-              <div className="pt-4 mt-4 border-t border-white/[0.06] flex items-center justify-between">
-                <span className="text-[11px] font-mono text-slate-500">
-                  {cert.organization}
-                </span>
-                <button
-                  onClick={() => setSelectedCert(cert)}
-                  className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1"
-                >
-                  <span>Verify</span>
-                  <ExternalLink className="w-3 h-3" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Academic References Section (Direct from Resume) */}
-        <div className="mt-20" data-aos="fade-up">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono font-medium text-indigo-300 mb-3">
-              <Users className="w-3.5 h-3.5 text-indigo-400" />
-              <span>ACADEMIC ENDORSEMENTS</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white">
-              Academic &amp; Professional References
-            </h3>
-            <p className="mt-2 text-xs sm:text-sm text-slate-400">
-              Department leaders and faculty members from the University of Moratuwa – Institute of Technology (ITUM).
-            </p>
+        {/* 1. Certifications Grid */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-2 pb-2">
+            <Award className="w-5 h-5 text-indigo-400" />
+            <h3 className="text-xl font-bold text-white">Certifications</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {certificationsData.map((cert, idx) => (
+              <div
+                key={cert.id}
+                data-aos="fade-up"
+                data-aos-delay={idx * 80}
+                className="group relative rounded-2xl bg-[#090d1f]/80 border border-white/[0.08] hover:border-indigo-500/40 p-5 backdrop-blur-xl transition-all duration-300 shadow-xl flex flex-col justify-between"
+              >
+                <div>
+                  {/* Certificate Thumbnail Preview */}
+                  <div className="relative h-44 rounded-xl overflow-hidden bg-slate-950 border border-white/5 mb-4 group-hover:border-indigo-500/30 transition-colors">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+
+                    {/* Hover Quick Action Buttons */}
+                    <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 backdrop-blur-xs">
+                      <button
+                        onClick={() => setSelectedCert(cert)}
+                        className="px-3.5 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-semibold flex items-center gap-1.5 shadow-md hover:bg-indigo-500 transition-colors cursor-pointer"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        <span>View</span>
+                      </button>
+                      <button
+                        onClick={() => handleDownload(cert)}
+                        className="px-3.5 py-1.5 rounded-lg bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 backdrop-blur-md hover:bg-white/30 transition-colors cursor-pointer"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        <span>Download</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Meta details */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs font-mono text-indigo-400">
+                      <span className="truncate">{cert.issuer}</span>
+                      <span className="flex items-center gap-1 text-slate-500">
+                        <Calendar className="w-3 h-3" />
+                        {cert.date}
+                      </span>
+                    </div>
+
+                    <h4 className="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">
+                      {cert.title}
+                    </h4>
+
+                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
+                      {cert.description}
+                    </p>
+
+                    {cert.code && (
+                      <div className="pt-1">
+                        <span className="text-[11px] font-mono text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">
+                          Verification Code: {cert.code}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Bottom Card View Link */}
+                <div className="pt-4 mt-4 border-t border-white/[0.06] flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-slate-500">
+                    {cert.date}
+                  </span>
+                  <button
+                    onClick={() => setSelectedCert(cert)}
+                    className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>Inspect</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 2. Achievements Section (New from CV) */}
+        <div className="mt-16 space-y-6" data-aos="fade-up">
+          <div className="flex items-center gap-2 pb-2">
+            <Trophy className="w-5 h-5 text-amber-400" />
+            <h3 className="text-xl font-bold text-white">Achievements</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {achievementsData.map((achieve, aIdx) => (
+              <div
+                key={aIdx}
+                className="group relative rounded-2xl bg-[#090d1f]/80 border border-white/[0.08] hover:border-amber-500/30 p-6 backdrop-blur-xl transition-all duration-300 shadow-xl flex items-start gap-4"
+              >
+                <div className="p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex-shrink-0">
+                  <Medal className="w-6 h-6" />
+                </div>
+                <div className="space-y-1.5 flex-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-semibold text-amber-300">
+                      {achieve.year}
+                    </span>
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-white/[0.04] text-slate-400">
+                      {achieve.category}
+                    </span>
+                  </div>
+                  <h4 className="text-lg font-bold text-white group-hover:text-amber-200 transition-colors">
+                    {achieve.title}
+                  </h4>
+                  <p className="text-xs font-semibold text-purple-300 font-mono">
+                    {achieve.organization}
+                  </p>
+                  <p className="text-xs text-slate-400 leading-relaxed pt-1">
+                    {achieve.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 3. References Section (Exact from CV) */}
+        <div className="mt-16 space-y-6" data-aos="fade-up">
+          <div className="flex items-center gap-2 pb-2">
+            <Users className="w-5 h-5 text-indigo-400" />
+            <h3 className="text-xl font-bold text-white">References</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {referencesData.map((ref, rIdx) => (
               <div
                 key={rIdx}
@@ -166,14 +203,9 @@ const CertificationsSection = () => {
                     {ref.title}
                   </p>
                   <p className="text-xs text-slate-400">{ref.institution}</p>
-                  {ref.affiliation && (
-                    <p className="text-[11px] text-slate-500">
-                      {ref.affiliation}
-                    </p>
-                  )}
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-white/[0.06] space-y-1.5 text-xs font-mono text-slate-300">
+                <div className="pt-4 mt-4 border-t border-white/[0.06] space-y-2 text-xs font-mono text-slate-300">
                   <a
                     href={`mailto:${ref.email}`}
                     className="flex items-center gap-2 hover:text-indigo-400 transition-colors truncate"
@@ -209,7 +241,7 @@ const CertificationsSection = () => {
           >
             <button
               onClick={() => setSelectedCert(null)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors"
+              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -234,7 +266,7 @@ const CertificationsSection = () => {
                     {selectedCert.title}
                   </h3>
                   <p className="text-xs text-slate-400 font-mono mt-0.5">
-                    Issued: {selectedCert.date}
+                    Year: {selectedCert.date}
                   </p>
                 </div>
 
@@ -245,21 +277,10 @@ const CertificationsSection = () => {
                 {selectedCert.code && (
                   <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
                     <p className="text-xs font-mono text-slate-400">
-                      Verification Credential Code:
+                      Verification Code:
                     </p>
                     <p className="text-sm font-mono font-bold text-indigo-300 mt-0.5">
                       {selectedCert.code}
-                    </p>
-                  </div>
-                )}
-
-                {selectedCert.certificateNumber && (
-                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
-                    <p className="text-xs font-mono text-slate-400">
-                      Certificate Serial Number:
-                    </p>
-                    <p className="text-sm font-mono font-bold text-indigo-300 mt-0.5">
-                      {selectedCert.certificateNumber}
                     </p>
                   </div>
                 )}
@@ -268,7 +289,7 @@ const CertificationsSection = () => {
               <div className="pt-4 border-t border-white/10 flex items-center gap-3">
                 <button
                   onClick={() => handleDownload(selectedCert)}
-                  className="flex-1 py-2.5 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 transition-all flex items-center justify-center gap-2 shadow-md shadow-indigo-600/25"
+                  className="flex-1 py-2.5 rounded-xl font-semibold text-xs text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 transition-all flex items-center justify-center gap-2 shadow-md shadow-indigo-600/25 cursor-pointer"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Image</span>
@@ -283,4 +304,3 @@ const CertificationsSection = () => {
 };
 
 export default memo(CertificationsSection);
-

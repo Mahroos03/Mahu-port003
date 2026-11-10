@@ -141,7 +141,7 @@ const About = () => {
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <a
                 href={personalInfo.resumePdf}
-                download="Mohammed_Mahroos_CV.pdf"
+                download={personalInfo.downloadFileName}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 transition-all shadow-md shadow-indigo-600/20"
               >
                 <FileText className="w-4 h-4" />

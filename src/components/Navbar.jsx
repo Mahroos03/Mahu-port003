@@ -186,7 +186,7 @@ const Navbar = () => {
             <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
               <a
                 href={personalInfo.resumePdf}
-                download="Mohammed_Mahroos_CV.pdf"
+                download={personalInfo.downloadFileName}
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg shadow-indigo-600/20"
               >
                 <Download className="w-4 h-4" />

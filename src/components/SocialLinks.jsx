@@ -23,7 +23,7 @@ const links = [
   {
     name: "GitHub",
     displayName: "GitHub",
-    subText: "@mahroos03",
+    subText: "Mahroos03",
     icon: Github,
     url: personalInfo.github,
     color: "#ffffff",

@@ -222,7 +222,7 @@ const ContactPage = () => {
                 <div className="pt-4 border-t border-white/[0.08]">
                   <a
                     href={personalInfo.resumePdf}
-                    download="Mohammed_Mahroos_CV.pdf"
+                    download={personalInfo.downloadFileName}
                     className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-semibold text-slate-200 bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 transition-colors"
                   >
                     <Download className="w-4 h-4 text-indigo-400" />

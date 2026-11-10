@@ -96,7 +96,7 @@ const Home = () => {
               </span>
               <span className="text-slate-500">•</span>
               <span className="text-xs text-slate-400 flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-slate-400" /> Palavi, Sri Lanka
+                <MapPin className="w-3 h-3 text-slate-400" /> {personalInfo.location}
               </span>
             </div>
 
@@ -163,7 +163,7 @@ const Home = () => {
 
               <a
                 href={personalInfo.resumePdf}
-                download="Mohammed_Mahroos_CV.pdf"
+                download={personalInfo.downloadFileName}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-0.5"
               >
                 <Download className="w-4 h-4 text-indigo-400" />
