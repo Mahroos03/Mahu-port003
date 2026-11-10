@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f24" />
+      <stop offset="50%" stop-color="#08071a" />
+      <stop offset="100%" stop-color="#120c2b" />
+    </linearGradient>
+    <linearGradient id="sm-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="sm-emerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="sm-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#sm-bg)"/>
+  
+  <!-- Subtle Grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="700" fill="url(#grid)" />
+
+  <!-- Glowing Orbs in Background -->
+  <circle cx="200" cy="150" r="180" fill="#6366f1" opacity="0.15" filter="url(#sm-glow)"/>
+  <circle cx="1050" cy="550" r="220" fill="#a855f7" opacity="0.15" filter="url(#sm-glow)"/>
+  <circle cx="950" cy="180" r="150" fill="#06b6d4" opacity="0.1" filter="url(#sm-glow)"/>
+
+  <!-- Top App Bar -->
+  <rect x="50" y="40" width="1100" height="60" rx="16" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+  <!-- App Title & Icon -->
+  <circle cx="85" cy="70" r="14" fill="url(#sm-accent)"/>
+  <path d="M80 73 L85 66 L90 73 Z" fill="#ffffff"/>
+  <text x="115" y="76" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18" letter-spacing="0.5">SMART MUNICIPAL COUNCIL</text>
+  <rect x="380" y="58" width="130" height="24" rx="12" fill="rgba(99, 102, 241, 0.2)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1"/>
+  <text x="445" y="74" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">CIVIC PORTAL</text>
+
+  <!-- Gemini AI Badge in Top Bar -->
+  <rect x="880" y="56" width="150" height="28" rx="14" fill="rgba(168, 85, 247, 0.15)" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1"/>
+  <circle cx="896" cy="70" r="4" fill="#c084fc"/>
+  <text x="965" y="74" fill="#e9d5ff" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Gemini AI Powered</text>
+
+  <!-- User Avatar -->
+  <circle cx="1110" cy="70" r="16" fill="rgba(255,255,255,0.1)"/>
+  <text x="1110" y="75" fill="#ffffff" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Admin</text>
+
+  <!-- Left Sidebar / Stats Section -->
+  <g transform="translate(50, 120)">
+    <!-- Metric 1: Total Complaints -->
+    <rect x="0" y="0" width="340" height="155" rx="16" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    <text x="24" y="38" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="500">MUNICIPAL COMPLAINTS</text>
+    <text x="24" y="85" fill="#ffffff" font-family="system-ui, sans-serif" font-size="36" font-weight="800">1,482</text>
+    <rect x="24" y="105" width="80" height="24" rx="6" fill="rgba(16, 185, 129, 0.15)"/>
+    <text x="64" y="121" fill="#34d399" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">+94.2% Solved</text>
+    <text x="118" y="121" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Automated Routing</text>
+
+    <!-- Metric 2: AI Priority Classification -->
+    <rect x="0" y="175" width="340" height="155" rx="16" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    <text x="24" y="213" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="500">GEMINI AI TRIAGE &amp; DUPLICATES</text>
+    <text x="24" y="260" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="34" font-weight="800">98.6%</text>
+    <text x="145" y="258" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13">Accuracy Score</text>
+    <rect x="24" y="280" width="130" height="24" rx="6" fill="rgba(99, 102, 241, 0.15)"/>
+    <text x="89" y="296" fill="#818cf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Zero Duplicates</text>
+
+    <!-- Metric 3: Online Payments via PayHere -->
+    <rect x="0" y="350" width="340" height="170" rx="16" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    <text x="24" y="388" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="500">PAYHERE REVENUE &amp; SANITATION</text>
+    <text x="24" y="435" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="32" font-weight="800">LKR 4.2M</text>
+    <rect x="24" y="460" width="110" height="24" rx="6" fill="rgba(56, 189, 248, 0.15)"/>
+    <text x="79" y="476" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Instant Receipt</text>
+    <text x="150" y="476" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Secured via JWT</text>
+  </g>
+
+  <!-- Main Center Section: Interactive Map & Issue Triage View -->
+  <g transform="translate(415, 120)">
+    <rect x="0" y="0" width="735" height="520" rx="20" fill="rgba(15, 23, 42, 0.7)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+    
+    <!-- Header of Main Box -->
+    <text x="30" y="42" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Live Civic Issues &amp; Geographic Heatmap</text>
+    <text x="30" y="65" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Leaflet &amp; Google Maps Geospatial Tracking with Real-time Sanitation Status</text>
+
+    <!-- Simulated Map / Geo Canvas Area -->
+    <rect x="30" y="85" width="675" height="225" rx="12" fill="#090d1f" stroke="rgba(99, 102, 241, 0.2)" stroke-width="1"/>
+    
+    <!-- Map Roads / Grid Lines -->
+    <path d="M 30 180 Q 200 160 400 200 T 705 170" fill="none" stroke="rgba(99, 102, 241, 0.25)" stroke-width="3"/>
+    <path d="M 220 85 L 280 310" fill="none" stroke="rgba(99, 102, 241, 0.2)" stroke-width="2"/>
+    <path d="M 520 85 Q 490 190 530 310" fill="none" stroke="rgba(99, 102, 241, 0.2)" stroke-width="2"/>
+    <path d="M 30 250 L 705 230" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1.5"/>
+
+    <!-- Map Markers -->
+    <!-- Marker 1: High Priority -->
+    <circle cx="250" cy="170" r="10" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="250" cy="170" r="4" fill="#ef4444"/>
+    <rect x="270" y="152" width="135" height="26" rx="6" fill="#1e1b4b" stroke="#6366f1" stroke-width="1"/>
+    <text x="337" y="169" fill="#e0e7ff" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Water Leak #304</text>
+
+    <!-- Marker 2: Resolved Sanitation -->
+    <circle cx="510" cy="210" r="10" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
+    <circle cx="510" cy="210" r="4" fill="#10b981"/>
+    <rect x="530" y="195" width="145" height="26" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+    <text x="602" y="212" fill="#d1fae5" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Waste Cleared (Ward 4)</text>
+
+    <!-- Table of Recent Citizen Requests -->
+    <text x="30" y="340" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Active Complaint Queue (AI Prioritized)</text>
+
+    <!-- Table Header -->
+    <rect x="30" y="355" width="675" height="32" rx="6" fill="rgba(255, 255, 255, 0.04)"/>
+    <text x="45" y="375" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">ID</text>
+    <text x="110" y="375" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">CATEGORY</text>
+    <text x="270" y="375" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">AI SEVERITY</text>
+    <text x="430" y="375" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">STATUS</text>
+    <text x="590" y="375" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">ACTION</text>
+
+    <!-- Row 1 -->
+    <rect x="30" y="393" width="675" height="42" rx="6" fill="rgba(255, 255, 255, 0.02)"/>
+    <text x="45" y="419" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">#MC-892</text>
+    <text x="110" y="419" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Sanitation &amp; Garbage</text>
+    <rect x="270" y="404" width="75" height="20" rx="4" fill="rgba(239, 68, 68, 0.15)"/>
+    <text x="307" y="418" fill="#f87171" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">CRITICAL</text>
+    <text x="430" y="419" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="12">In Dispatch</text>
+    <rect x="585" y="403" width="90" height="22" rx="4" fill="url(#sm-accent)"/>
+    <text x="630" y="418" fill="#ffffff" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">View Ward</text>
+
+    <!-- Row 2 -->
+    <rect x="30" y="442" width="675" height="42" rx="6" fill="rgba(255, 255, 255, 0.01)"/>
+    <text x="45" y="468" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">#MC-893</text>
+    <text x="110" y="468" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Street Lighting Breakdown</text>
+    <rect x="270" y="453" width="70" height="20" rx="4" fill="rgba(234, 179, 8, 0.15)"/>
+    <text x="305" y="467" fill="#facc15" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">MEDIUM</text>
+    <text x="430" y="468" fill="#34d399" font-family="system-ui, sans-serif" font-size="12">Assigned</text>
+    <rect x="585" y="452" width="90" height="22" rx="4" fill="rgba(255, 255, 255, 0.08)"/>
+    <text x="630" y="467" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Details</text>
+  </g>
+
+  <!-- Technology Stack Badges in bottom -->
+  <g transform="translate(50, 655)">
+    <text x="0" y="16" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" font-weight="600">ENGINEERED WITH:</text>
+    <text x="135" y="16" fill="#818cf8" font-family="system-ui, sans-serif" font-size="12" font-weight="500">Java 17 • Spring Boot • React 19 • Gemini AI API • PostgreSQL • Docker Compose • Leaflet • PayHere</text>
+  </g>
+</svg>

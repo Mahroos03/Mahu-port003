@@ -1,15 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./index.css";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import AnimatedBackground from "./components/Background";
 import Navbar from "./components/Navbar";
-import Portofolio from "./Pages/Portofolio";
+import SkillsSection from "./components/SkillsSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ExperienceSection from "./components/ExperienceSection";
+import EducationSection from "./components/EducationSection";
+import CertificationsSection from "./components/CertificationsSection";
 import ContactPage from "./Pages/Contact";
+import Footer from "./components/Footer";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from "framer-motion";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -21,47 +26,36 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       </AnimatePresence>
 
       {!showWelcome && (
-        <>
+        <div className="relative min-h-screen bg-[#030014] text-slate-100 flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
           <Navbar />
           <AnimatedBackground />
-          <Home />
-          <About />
-          <Portofolio />
-          <ContactPage />
-          <footer>
-            <center>
-              <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
-              <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
-                © 2026{" "}
-                <a href="https://flowbite.com/" className="hover:underline">
-                Mahroos DevOps™
-                </a>
-                . All Rights Reserved.
-              </span>
-            </center>
-          </footer>
-        </>
+
+          <main className="flex-grow">
+            <Home />
+            <About />
+            <SkillsSection />
+            <ProjectsSection />
+            <ExperienceSection />
+            <EducationSection />
+            <CertificationsSection />
+            <ContactPage />
+          </main>
+
+          <Footer />
+        </div>
       )}
     </>
   );
 };
 
 const ProjectPageLayout = () => (
-  <>
-    <ProjectDetails />
-    <footer>
-      <center>
-        <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
-        <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
-          © 2023{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
-            EkiZR™
-          </a>
-          . All Rights Reserved.
-        </span>
-      </center>
-    </footer>
-  </>
+  <div className="relative min-h-screen bg-[#030014] text-slate-100 flex flex-col">
+    <Navbar />
+    <main className="flex-grow pt-16">
+      <ProjectDetails />
+    </main>
+    <Footer />
+  </div>
 );
 
 function App() {
@@ -70,7 +64,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+        <Route
+          path="/"
+          element={
+            <LandingPage
+              showWelcome={showWelcome}
+              setShowWelcome={setShowWelcome}
+            />
+          }
+        />
         <Route path="/project/:id" element={<ProjectPageLayout />} />
       </Routes>
     </BrowserRouter>
